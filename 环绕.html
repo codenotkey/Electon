@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+</body>
+</html>
+
+<style>
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1e1e1e;
+  position: relative;
+}
+#app {
+  position: relative;
+  /* border: 1px solid red; */
+  width: 200px;
+  height: 200px;
+}
+#app span{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  color: white;
+}
+
+#app span:nth-child(1)
+{
+  background: rgba(255, 255, 255, 0.1);
+  border-top: .25px solid rgba(255, 255, 255, 0.5);
+  border-left: .25px solid rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  backdrop-filter: blur(15px);
+}
+#app span:nth-child(2)
+{
+  background: rgba(21, 207, 14, 1);
+  border-top: .25px solid rgba(255, 255, 255, 0.5);
+  border-left: .25px solid rgba(255, 255, 255, 0.5);
+  animation: anima 4s ease-in-out infinite;
+}
+
+#app span:nth-child(3)
+{
+  background: rgb(238, 23, 191);
+  animation: anima 4s  2s ease-in-out infinite ;
+  border-radius:  0;
+  /* animation-direction:alternate; */
+  animation-delay: -2s;
+}
+
+@keyframes anima {
+  0% {
+    transform: translate(-200px, 200px) scale(.4)  rotate(0deg);
+    z-index: 1;
+  }
+   50% {
+    transform: translate(200px, -200px) scale(.4)  rotate(180deg);
+    z-index: 1;
+  }
+  50.00001% {
+    transform: translate(200px, -200px) scale(.4)  rotate(180deg);
+    z-index: 3;
+  }
+  100% {
+    transform: translate(-200px, 200px) scale(.4)  rotate(360deg);
+    z-index: 3;
+  }
+}
+
+</style>
