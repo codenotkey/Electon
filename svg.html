@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+svg {
+  width: 100px;
+  background-color: #aaa;
+}
+.eye-ball {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  transition: .3 all ease-in-out;
+}
+svg:hover .eve-ball{
+  /* stroke-dashoffset: 100; */
+  stroke-dashoffset: 50;
+  stroke:#184098;
+}
+</style>
+<body>
+    <svg viewBox="0 0 100 100">
+        <path stroke="#184098" fill="none" stroke-linecap="round"
+              stroke-width="10" d="M10,50 Q50,10 90,50"  class="eye-top"
+        />
+        <path stroke="#184098" fill="none" stroke-linecap="round"
+              stroke-width="10" d="M10,50 Q50,90 90,50"  class="eye-bottom"
+        />
+        <circle cx="50" cy="50" r="15"  stroke-linecap="round" class="eye-ball"
+                style="fill:none;stroke-width:10"
+                transform="rotate(90 50 50)"
+                />
+      </svg>
+</body>
+</html>
